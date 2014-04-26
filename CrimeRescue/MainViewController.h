@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UIViewController
+- (IBAction)logoutButtonPressed:(id)sender;
 
+- (IBAction)helpButtonPressed:(id)sender;
 @end

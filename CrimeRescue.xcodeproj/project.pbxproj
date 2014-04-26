@@ -23,6 +23,17 @@
 		74104209190A345600425598 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74104208190A345600425598 /* MainViewController.m */; };
 		74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED173E190B2D9D0090C3BE /* LoginViewController.m */; };
 		74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED1741190B2DB10090C3BE /* SignUpViewController.m */; };
+		74ED1744190B40610090C3BE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1743190B40610090C3BE /* Parse.framework */; };
+		74ED1746190B40A80090C3BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1745190B40A80090C3BE /* AudioToolbox.framework */; };
+		74ED1748190B410B0090C3BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1747190B410B0090C3BE /* CFNetwork.framework */; };
+		74ED1750190B41480090C3BE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1749190B41480090C3BE /* CoreLocation.framework */; };
+		74ED1751190B41480090C3BE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED174A190B41480090C3BE /* libz.dylib */; };
+		74ED1752190B41480090C3BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED174B190B41480090C3BE /* MobileCoreServices.framework */; };
+		74ED1753190B41480090C3BE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED174C190B41480090C3BE /* QuartzCore.framework */; };
+		74ED1754190B41480090C3BE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED174D190B41480090C3BE /* Security.framework */; };
+		74ED1755190B41480090C3BE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED174E190B41480090C3BE /* StoreKit.framework */; };
+		74ED1756190B41480090C3BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED174F190B41480090C3BE /* SystemConfiguration.framework */; };
+		74ED1758190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 74ED1757190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +70,17 @@
 		74ED173E190B2D9D0090C3BE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		74ED1740190B2DB10090C3BE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = ../SignUpViewController.h; sourceTree = "<group>"; };
 		74ED1741190B2DB10090C3BE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = ../SignUpViewController.m; sourceTree = "<group>"; };
+		74ED1743190B40610090C3BE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		74ED1745190B40A80090C3BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		74ED1747190B410B0090C3BE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		74ED1749190B41480090C3BE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		74ED174A190B41480090C3BE /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		74ED174B190B41480090C3BE /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		74ED174C190B41480090C3BE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		74ED174D190B41480090C3BE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		74ED174E190B41480090C3BE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		74ED174F190B41480090C3BE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		74ED1757190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "Wood-Panel-iphone-5s-wallpaper.jpg"; path = "../../../Wood-Panel-iphone-5s-wallpaper.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +88,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74ED1750190B41480090C3BE /* CoreLocation.framework in Frameworks */,
+				74ED1751190B41480090C3BE /* libz.dylib in Frameworks */,
+				74ED1752190B41480090C3BE /* MobileCoreServices.framework in Frameworks */,
+				74ED1753190B41480090C3BE /* QuartzCore.framework in Frameworks */,
+				74ED1754190B41480090C3BE /* Security.framework in Frameworks */,
+				74ED1755190B41480090C3BE /* StoreKit.framework in Frameworks */,
+				74ED1756190B41480090C3BE /* SystemConfiguration.framework in Frameworks */,
+				74ED1748190B410B0090C3BE /* CFNetwork.framework in Frameworks */,
 				741041D9190A236700425598 /* CoreGraphics.framework in Frameworks */,
+				74ED1746190B40A80090C3BE /* AudioToolbox.framework in Frameworks */,
 				741041DB190A236700425598 /* UIKit.framework in Frameworks */,
+				74ED1744190B40610090C3BE /* Parse.framework in Frameworks */,
 				741041D7190A236700425598 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +139,16 @@
 		741041D5190A236700425598 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74ED1749190B41480090C3BE /* CoreLocation.framework */,
+				74ED174A190B41480090C3BE /* libz.dylib */,
+				74ED174B190B41480090C3BE /* MobileCoreServices.framework */,
+				74ED174C190B41480090C3BE /* QuartzCore.framework */,
+				74ED174D190B41480090C3BE /* Security.framework */,
+				74ED174E190B41480090C3BE /* StoreKit.framework */,
+				74ED174F190B41480090C3BE /* SystemConfiguration.framework */,
+				74ED1747190B410B0090C3BE /* CFNetwork.framework */,
+				74ED1745190B40A80090C3BE /* AudioToolbox.framework */,
+				74ED1743190B40610090C3BE /* Parse.framework */,
 				741041D6190A236700425598 /* Foundation.framework */,
 				741041D8190A236700425598 /* CoreGraphics.framework */,
 				741041DA190A236700425598 /* UIKit.framework */,
@@ -128,6 +170,7 @@
 				741041E5190A236700425598 /* AppDelegate.h */,
 				741041E6190A236700425598 /* AppDelegate.m */,
 				741041E8190A236700425598 /* Images.xcassets */,
+				74ED1757190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg */,
 				741041DD190A236700425598 /* Supporting Files */,
 			);
 			path = CrimeRescue;
@@ -238,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				741041E1190A236700425598 /* InfoPlist.strings in Resources */,
+				74ED1758190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg in Resources */,
 				741041E9190A236700425598 /* Images.xcassets in Resources */,
 				74104206190A265200425598 /* Storyboard.storyboard in Resources */,
 			);
@@ -379,6 +423,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrimeRescue/CrimeRescue-Prefix.pch";
 				INFOPLIST_FILE = "CrimeRescue/CrimeRescue-Info.plist";
@@ -393,6 +441,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrimeRescue/CrimeRescue-Prefix.pch";
 				INFOPLIST_FILE = "CrimeRescue/CrimeRescue-Info.plist";

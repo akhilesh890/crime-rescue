@@ -7,7 +7,7 @@
 //
 
 #import "MainViewController.h"
-
+#import <Parse/Parse.h>
 @interface MainViewController ()
 
 @end
@@ -23,21 +23,13 @@
     NSLog(@"Done");
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)logoutButtonPressed:(id)sender {
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)helpButtonPressed:(id)sender {
+    //GPS Data sent.
+    NSLog(@"Pressed");
 }
-*/
-
 @end
