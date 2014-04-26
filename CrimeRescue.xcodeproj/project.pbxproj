@@ -19,6 +19,10 @@
 		741041F2190A236700425598 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 741041DA190A236700425598 /* UIKit.framework */; };
 		741041FA190A236700425598 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 741041F8190A236700425598 /* InfoPlist.strings */; };
 		741041FC190A236700425598 /* CrimeRescueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741041FB190A236700425598 /* CrimeRescueTests.m */; };
+		74104206190A265200425598 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74104205190A265200425598 /* Storyboard.storyboard */; };
+		74104209190A345600425598 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74104208190A345600425598 /* MainViewController.m */; };
+		74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED173E190B2D9D0090C3BE /* LoginViewController.m */; };
+		74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED1741190B2DB10090C3BE /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		741041F7190A236700425598 /* CrimeRescueTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CrimeRescueTests-Info.plist"; sourceTree = "<group>"; };
 		741041F9190A236700425598 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		741041FB190A236700425598 /* CrimeRescueTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrimeRescueTests.m; sourceTree = "<group>"; };
+		74104205190A265200425598 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		74104207190A345600425598 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		74104208190A345600425598 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		74ED173D190B2D9D0090C3BE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		74ED173E190B2D9D0090C3BE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
+		74ED1740190B2DB10090C3BE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = ../SignUpViewController.h; sourceTree = "<group>"; };
+		74ED1741190B2DB10090C3BE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = ../SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +118,13 @@
 		741041DC190A236700425598 /* CrimeRescue */ = {
 			isa = PBXGroup;
 			children = (
+				74104205190A265200425598 /* Storyboard.storyboard */,
+				74104207190A345600425598 /* MainViewController.h */,
+				74104208190A345600425598 /* MainViewController.m */,
+				74ED1740190B2DB10090C3BE /* SignUpViewController.h */,
+				74ED1741190B2DB10090C3BE /* SignUpViewController.m */,
+				74ED173D190B2D9D0090C3BE /* LoginViewController.h */,
+				74ED173E190B2D9D0090C3BE /* LoginViewController.m */,
 				741041E5190A236700425598 /* AppDelegate.h */,
 				741041E6190A236700425598 /* AppDelegate.m */,
 				741041E8190A236700425598 /* Images.xcassets */,
@@ -221,6 +239,7 @@
 			files = (
 				741041E1190A236700425598 /* InfoPlist.strings in Resources */,
 				741041E9190A236700425598 /* Images.xcassets in Resources */,
+				74104206190A265200425598 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */,
+				74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */,
 				741041E7190A236700425598 /* AppDelegate.m in Sources */,
+				74104209190A345600425598 /* MainViewController.m in Sources */,
 				741041E3190A236700425598 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -360,6 +382,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrimeRescue/CrimeRescue-Prefix.pch";
 				INFOPLIST_FILE = "CrimeRescue/CrimeRescue-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,6 +396,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CrimeRescue/CrimeRescue-Prefix.pch";
 				INFOPLIST_FILE = "CrimeRescue/CrimeRescue-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -437,6 +461,7 @@
 				74104201190A236700425598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		74104202190A236700425598 /* Build configuration list for PBXNativeTarget "CrimeRescueTests" */ = {
 			isa = XCConfigurationList;
@@ -445,6 +470,7 @@
 				74104204190A236700425598 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
