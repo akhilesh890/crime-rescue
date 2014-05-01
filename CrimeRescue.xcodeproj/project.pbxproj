@@ -21,6 +21,12 @@
 		741041FC190A236700425598 /* CrimeRescueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741041FB190A236700425598 /* CrimeRescueTests.m */; };
 		74104206190A265200425598 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74104205190A265200425598 /* Storyboard.storyboard */; };
 		74104209190A345600425598 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74104208190A345600425598 /* MainViewController.m */; };
+		746095D41910DFA70023AE9D /* UserActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 746095D31910DFA70023AE9D /* UserActivity.m */; };
+		746095D71911BE520023AE9D /* TimeControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746095D61911BE520023AE9D /* TimeControllerViewController.m */; };
+		746095DC19120EE40023AE9D /* Aired_Leather_840x1136_DARK.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */; };
+		746095DD19120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */; };
+		746095DE19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */; };
+		746095DF19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */; };
 		74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED173E190B2D9D0090C3BE /* LoginViewController.m */; };
 		74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED1741190B2DB10090C3BE /* SignUpViewController.m */; };
 		74ED1744190B40610090C3BE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1743190B40610090C3BE /* Parse.framework */; };
@@ -66,6 +72,14 @@
 		74104205190A265200425598 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		74104207190A345600425598 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		74104208190A345600425598 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		746095D21910DFA70023AE9D /* UserActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivity.h; sourceTree = "<group>"; };
+		746095D31910DFA70023AE9D /* UserActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActivity.m; sourceTree = "<group>"; };
+		746095D51911BE520023AE9D /* TimeControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeControllerViewController.h; sourceTree = "<group>"; };
+		746095D61911BE520023AE9D /* TimeControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeControllerViewController.m; sourceTree = "<group>"; };
+		746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aired_Leather_840x1136_DARK.jpg; sourceTree = "<group>"; };
+		746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background_ios_by_anto97ism-d61yby0.jpg"; sourceTree = "<group>"; };
+		746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg; sourceTree = "<group>"; };
+		746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg"; sourceTree = "<group>"; };
 		74ED173D190B2D9D0090C3BE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
 		74ED173E190B2D9D0090C3BE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		74ED1740190B2DB10090C3BE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = ../SignUpViewController.h; sourceTree = "<group>"; };
@@ -124,6 +138,10 @@
 				741041F5190A236700425598 /* CrimeRescueTests */,
 				741041D5190A236700425598 /* Frameworks */,
 				741041D4190A236700425598 /* Products */,
+				746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */,
+				746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */,
+				746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */,
+				746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +187,10 @@
 				74ED173E190B2D9D0090C3BE /* LoginViewController.m */,
 				741041E5190A236700425598 /* AppDelegate.h */,
 				741041E6190A236700425598 /* AppDelegate.m */,
+				746095D21910DFA70023AE9D /* UserActivity.h */,
+				746095D31910DFA70023AE9D /* UserActivity.m */,
+				746095D51911BE520023AE9D /* TimeControllerViewController.h */,
+				746095D61911BE520023AE9D /* TimeControllerViewController.m */,
 				741041E8190A236700425598 /* Images.xcassets */,
 				74ED1757190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg */,
 				741041DD190A236700425598 /* Supporting Files */,
@@ -280,10 +302,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746095DF19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg in Resources */,
 				741041E1190A236700425598 /* InfoPlist.strings in Resources */,
 				74ED1758190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg in Resources */,
+				746095DD19120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg in Resources */,
+				746095DC19120EE40023AE9D /* Aired_Leather_840x1136_DARK.jpg in Resources */,
 				741041E9190A236700425598 /* Images.xcassets in Resources */,
 				74104206190A265200425598 /* Storyboard.storyboard in Resources */,
+				746095DE19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,9 +328,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				746095D71911BE520023AE9D /* TimeControllerViewController.m in Sources */,
 				74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */,
 				74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */,
 				741041E7190A236700425598 /* AppDelegate.m in Sources */,
+				746095D41910DFA70023AE9D /* UserActivity.m in Sources */,
 				74104209190A345600425598 /* MainViewController.m in Sources */,
 				741041E3190A236700425598 /* main.m in Sources */,
 			);
@@ -355,7 +383,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -393,7 +421,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
@@ -404,7 +432,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_NS_ASSERTIONS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;

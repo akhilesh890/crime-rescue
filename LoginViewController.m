@@ -55,7 +55,6 @@
     [self.passwordTextField resignFirstResponder];
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

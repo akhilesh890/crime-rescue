@@ -46,7 +46,7 @@
         newUser.email = email;
         newUser[@"phone"] = phone;
         newUser[@"firstname"] = firstname;
-
+        
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
@@ -58,7 +58,7 @@
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }
         }];
-
+        
     }
 }
 
@@ -68,7 +68,7 @@
     [self.nameTextField resignFirstResponder];
     [self.emailTextField resignFirstResponder];
     [self.phoneTextField resignFirstResponder];
-
+    
 }
 
 @end
