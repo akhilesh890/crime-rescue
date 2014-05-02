@@ -15,12 +15,14 @@
 - (IBAction)helpButtonTouchDown:(id)sender;
 - (IBAction)helpButtonTouchUp:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UILabel *latitude;
-@property (strong, nonatomic) IBOutlet UILabel *longitude;
-@property (strong, nonatomic) IBOutlet UILabel *address;
 @property (retain, nonatomic) IBOutlet UILabel *timerLabel;
 @property (retain, nonatomic) IBOutlet UILabel *alarmLabel;
+@property (retain, nonatomic) IBOutlet UISwitch *alarmSwitch;
+@property (retain, nonatomic) IBOutlet UILabel *statusLabel;
+@property (retain, nonatomic) IBOutlet UILabel *userLabel;
+
 - (IBAction)alarmSwitch:(id)sender;
+-(void)updateCounter:(NSTimer *)theTimer;
 
 
 //@property (strong, nonatomic) UserActivity *userData;

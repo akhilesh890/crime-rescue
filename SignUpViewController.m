@@ -29,7 +29,7 @@
     NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *email = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *phone = [self.phoneTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    
+    NSLog(password);
     if ([username length] == 0 || [firstname length] == 0 ||
         [password length] == 0 || [email length] == 0 || [phone length] == 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
@@ -46,7 +46,7 @@
         newUser.email = email;
         newUser[@"phone"] = phone;
         newUser[@"firstname"] = firstname;
-        
+        newUser[@"passcode"] = password;
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"

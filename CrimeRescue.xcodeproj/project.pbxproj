@@ -22,7 +22,6 @@
 		74104206190A265200425598 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74104205190A265200425598 /* Storyboard.storyboard */; };
 		74104209190A345600425598 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74104208190A345600425598 /* MainViewController.m */; };
 		746095D41910DFA70023AE9D /* UserActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 746095D31910DFA70023AE9D /* UserActivity.m */; };
-		746095D71911BE520023AE9D /* TimeControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 746095D61911BE520023AE9D /* TimeControllerViewController.m */; };
 		746095DC19120EE40023AE9D /* Aired_Leather_840x1136_DARK.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */; };
 		746095DD19120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */; };
 		746095DE19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */; };
@@ -74,8 +73,6 @@
 		74104208190A345600425598 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		746095D21910DFA70023AE9D /* UserActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivity.h; sourceTree = "<group>"; };
 		746095D31910DFA70023AE9D /* UserActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActivity.m; sourceTree = "<group>"; };
-		746095D51911BE520023AE9D /* TimeControllerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeControllerViewController.h; sourceTree = "<group>"; };
-		746095D61911BE520023AE9D /* TimeControllerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeControllerViewController.m; sourceTree = "<group>"; };
 		746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aired_Leather_840x1136_DARK.jpg; sourceTree = "<group>"; };
 		746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background_ios_by_anto97ism-d61yby0.jpg"; sourceTree = "<group>"; };
 		746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg; sourceTree = "<group>"; };
@@ -189,8 +186,6 @@
 				741041E6190A236700425598 /* AppDelegate.m */,
 				746095D21910DFA70023AE9D /* UserActivity.h */,
 				746095D31910DFA70023AE9D /* UserActivity.m */,
-				746095D51911BE520023AE9D /* TimeControllerViewController.h */,
-				746095D61911BE520023AE9D /* TimeControllerViewController.m */,
 				741041E8190A236700425598 /* Images.xcassets */,
 				74ED1757190B97BD0090C3BE /* Wood-Panel-iphone-5s-wallpaper.jpg */,
 				741041DD190A236700425598 /* Supporting Files */,
@@ -328,7 +323,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746095D71911BE520023AE9D /* TimeControllerViewController.m in Sources */,
 				74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */,
 				74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */,
 				741041E7190A236700425598 /* AppDelegate.m in Sources */,
