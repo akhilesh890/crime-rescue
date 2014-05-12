@@ -15,7 +15,6 @@ typedef enum UserStatusTypes
     ENABLED,
     DISABLED,
     ALARM
-    
 } Status;
 
 

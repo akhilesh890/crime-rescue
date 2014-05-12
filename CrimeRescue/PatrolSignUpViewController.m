@@ -1,19 +1,20 @@
 //
-//  SignUpViewController.m
+//  PatrolSignUpViewController.m
 //  CrimeRescue
 //
-//  Created by Aswin Akhilesh on 4/25/14.
+//  Created by Aswin Akhilesh on 5/10/14.
 //  Copyright (c) 2014 Aswin Akhilesh. All rights reserved.
 //
 
-#import "SignUpViewController.h"
+#import "PatrolSignUpViewController.h"
 #import <Parse/Parse.h>
 
-@interface SignUpViewController ()
+@interface PatrolSignUpViewController ()
 
 @end
 
-@implementation SignUpViewController
+@implementation PatrolSignUpViewController
+
 
 - (void)viewDidLoad
 {
@@ -36,7 +37,6 @@
                                                             message:@"Make sure you didnt leave out any field!"
                                                            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
-        
     }
     
     else {
@@ -47,7 +47,7 @@
         newUser[@"phone"] = phone;
         newUser[@"firstname"] = firstname;
         newUser[@"passcode"] = password;
-        newUser[@"Mode"] = @"NORMAL";
+        newUser[@"Mode"] = @"PATROL";
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (error) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"

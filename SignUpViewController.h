@@ -16,7 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *emailTextField;
 @property (strong, nonatomic) IBOutlet UITextField *phoneTextField;
 
-
 - (IBAction)signupButtonPressed:(id)sender;
 
 @end

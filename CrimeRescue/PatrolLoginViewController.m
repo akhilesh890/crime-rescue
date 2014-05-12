@@ -1,19 +1,19 @@
 //
-//  LoginViewController.m
+//  PatrolLoginViewController.m
 //  CrimeRescue
 //
-//  Created by Aswin Akhilesh on 4/25/14.
+//  Created by Aswin Akhilesh on 5/10/14.
 //  Copyright (c) 2014 Aswin Akhilesh. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "PatrolLoginViewController.h"
 #import <Parse/Parse.h>
 
-@interface LoginViewController ()
+@interface PatrolLoginViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation PatrolLoginViewController
 
 
 - (void)viewDidLoad
@@ -29,11 +29,11 @@
     NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     if ([username length] == 0 || [password length] == 0) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"Make sure you enter a username and password!"
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Oops!"
+                                                            message:@"Make sure you enter a username and password!"
                                                            delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
     }
-    
     
     else {
         
@@ -41,22 +41,21 @@
         [query whereKey:@"username" equalTo:username];
         NSArray *candidate = [query findObjects];
         NSString *mode = nil;
-        BOOL isNormalUser = YES;
+        BOOL isPatrolUser = YES;
         
         if ([candidate count] > 0) {
             PFUser *referenceUser = [candidate objectAtIndex:0];
             mode = referenceUser[@"Mode"];
-            if ([mode  isEqual: @"PATROL"]) {
-                isNormalUser = NO;
+            if ([mode  isEqual: @"NORMAL"]) {
+                isPatrolUser = NO;
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                                    message:@"You are already registered in Patrol Mode"
+                                                                    message:@"You are already registered in Normal Mode"
                                                                    delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
                 [alertView show];
             }
         }
         
-        
-        if (isNormalUser == YES)
+        if (isPatrolUser == YES)
         {
             [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
                 if (error) {
@@ -83,5 +82,4 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 @end

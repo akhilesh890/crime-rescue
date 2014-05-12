@@ -7,7 +7,6 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
-
 #define COUNTDOWN_START 9
 
 @interface MainViewController ()
@@ -16,6 +15,7 @@
 
 @implementation MainViewController{
     CLLocationManager *locationManager;
+    CLLocation *currentLocation;
     CLGeocoder *geocoder;
     CLPlacemark *placemark;
     UIAlertView *alert;
@@ -32,7 +32,7 @@
     [super viewDidLoad];
     NSLog(@"ViewDidLoad");
     // NSLog(currentUser[@"firstname"]);
-    [self hideLabelsAndSwitches:TRUE];
+    [self hideLabelsAndSwitchesAndButtons:TRUE];
     currentUser = [PFUser currentUser];
     if (currentUser == false) {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
@@ -42,21 +42,23 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     currentUser = [PFUser currentUser];
-    //   PFUser *currentUser = [PFUser currentUser];
     userData = [[UserActivity alloc] initWithStatus];
-    [self hideLabelsAndSwitches:TRUE];
-    self.statusLabel.text = @"Press Above";
-
-    self.userLabel.text = [NSString stringWithFormat:@"Welcome, %@",[currentUser username]];
-    locationManager = [[CLLocationManager alloc] init];
-    geocoder = [[CLGeocoder alloc] init];
-    NSLog(@"%f", userData.currentAccuracy);
-    NSLog(@"%@", userData.currentStatus);
+    [self hideLabelsAndSwitchesAndButtons:TRUE];
     
+    self.statusLabel.text = @"Press Above";
+    self.userLabel.text = [NSString stringWithFormat:@"Welcome, %@",[currentUser username]];
     NSLog(@"ViewDidAppear");
-    // NSLog(currentUser[@"firstname"]);
     NSLog(@"ViewDidAppear Done");
+    userData.currentStatus = @"PASSIVE";
+
+    // Code for GPS.
+    geocoder = [[CLGeocoder alloc] init];
     secondsLeft = COUNTDOWN_START;
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+    [locationManager startUpdatingLocation];
 }
 
 -(void) viewDidDisappear:(BOOL)animated {
@@ -65,6 +67,7 @@
         [timer invalidate];
         timer = nil;
     }
+    [locationManager stopUpdatingLocation];
 }
 
 #pragma mark - Button Methods
@@ -73,27 +76,26 @@
     //GPS Data sent.
     NSLog(@"Pressed");
     self.statusLabel.text = @"Keep Pressed Until Danger";
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //    locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     [locationManager startUpdatingLocation];
     userData.currentStatus = @"ENABLED";
-    
 }
 
 - (IBAction)helpButtonTouchUp:(id)sender {
-    self.statusLabel.text = @"Cancel Alarm Before Timer Ends";
+    self.statusLabel.text = @"Cancel Alarm?";
     NSLog(@"Released");
     userData.currentStatus = @"DISABLED";
+    [self sendRemoteData];
+    
     userData.currentAccuracy = DBL_MAX;
     secondsLeft = COUNTDOWN_START;
     self.timerLabel.text = [NSString stringWithFormat:@"%d", COUNTDOWN_START];
-    [self hideLabelsAndSwitches:FALSE];
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounter:) userInfo:nil repeats:NO];
+    [self hideLabelsAndSwitchesAndButtons:FALSE];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounter:) userInfo:nil repeats:NO];   // Start the Timer
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-
+    
     if (buttonIndex == 0) {
         [self.alarmSwitch setOn:TRUE animated:TRUE];
     }
@@ -108,9 +110,8 @@
                 timer = nil;
             }
             [alert dismissWithClickedButtonIndex:0 animated:TRUE];
-            [self hideLabelsAndSwitches:TRUE];
+            [self hideLabelsAndSwitchesAndButtons:TRUE];
             [locationManager stopUpdatingLocation];
-
         }
         else {
             [self.alarmSwitch setOn:TRUE];
@@ -118,18 +119,17 @@
             self.statusLabel.text = @"Wrong Password";
         }
     }
-    
 }
 
 - (IBAction)alarmSwitch:(id)sender {
     NSLog(@"I am pressed");
-
+    
     alert = [[UIAlertView alloc]
-                              initWithTitle:@"Disable Alarm"
-                              message:@"Enter your password before the timer ends"
-                              delegate:self
-                              cancelButtonTitle:@"Cancel"
-                              otherButtonTitles:@"Disable", nil];
+             initWithTitle:@"Disable Alarm"
+             message:@"Enter your password before the timer ends"
+             delegate:self
+             cancelButtonTitle:@"Cancel"
+             otherButtonTitles:@"Disable", nil];
     [alert setAlertViewStyle:UIAlertViewStyleSecureTextInput];
     [alert show];
     
@@ -156,13 +156,41 @@
     
     NSLog(@"didUpdateToLocation: %@", [locations lastObject]);
     
-    CLLocation *currentLocation = [locations lastObject];
+    currentLocation = [locations lastObject];
     
     //    if (currentLocation.horizontalAccuracy < userData.currentAccuracy) {
     userData.currentAccuracy = currentLocation.horizontalAccuracy;
     
     NSLog(@"Resolving the Address\n");
     NSLog(@"ACCURACY %f %f", currentLocation.horizontalAccuracy, currentLocation.verticalAccuracy);
+    
+    [self sendRemoteData];
+    
+    NSLog(@"I reached Here");
+    
+    //    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+    //        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+    //        if (error == nil && [placemarks count] > 0) {
+    //            placemark = [placemarks lastObject];
+    //            self.address.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
+    //                                 placemark.subThoroughfare, placemark.thoroughfare,
+    //                                 placemark.postalCode, placemark.locality,
+    //                                 placemark.administrativeArea,
+    //                                 placemark.country];
+    //        } else {
+    //            NSLog(@"%@", error.debugDescription);
+    //        }
+    //    } ];
+    //    }
+    //    else {
+    //        NSLog(@"Not So Accurate!");
+    //    }
+    
+}
+
+
+-(void) sendRemoteData {
+    
     
     PFGeoPoint *currentPoint = [PFGeoPoint geoPointWithLatitude:currentLocation.coordinate.latitude
                                                       longitude:currentLocation.coordinate.longitude];
@@ -175,7 +203,14 @@
     [postObject setObject:currentPoint forKey:@"GeoLocation"];
     [postObject setObject:userData.currentStatus forKey:@"Status"];
     
-    //TODO: Timestamp needs to go to the Server too! Figure out a way!
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    
+    //NSLog(dateString);
+    [postObject setObject:currDate forKey:@"TimeStamp"];
+    //TODO: PHP Integration.
     
     [postObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
@@ -221,25 +256,6 @@
          
      }];
     
-    NSLog(@"I reached Here");
-    
-//    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-//        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-//        if (error == nil && [placemarks count] > 0) {
-//            placemark = [placemarks lastObject];
-//            self.address.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-//                                 placemark.subThoroughfare, placemark.thoroughfare,
-//                                 placemark.postalCode, placemark.locality,
-//                                 placemark.administrativeArea,
-//                                 placemark.country];
-//        } else {
-//            NSLog(@"%@", error.debugDescription);
-//        }
-//    } ];
-    //    }
-    //    else {
-    //        NSLog(@"Not So Accurate!");
-    //    }
 }
 
 #pragma mark - Timer Code
@@ -264,25 +280,37 @@
             [alert dismissWithClickedButtonIndex:0 animated:TRUE];
         }
         self.timerLabel.text = [NSString stringWithFormat:@"%d", COUNTDOWN_START];
-        [self hideLabelsAndSwitches:TRUE];
+        [self hideLabelsAndSwitchesAndButtons:TRUE];
+        [self sendRemoteData];
         
         // TODO: Push Notification Initiation.
     }
 }
 
--(void) hideLabelsAndSwitches:(BOOL)flag {
+-(void) hideLabelsAndSwitchesAndButtons:(BOOL)flag {
     [self.alarmSwitch setOn:TRUE animated:TRUE];
     [self.alarmSwitch setHidden:flag];
     [self.alarmLabel setHidden:flag];
+    [self.alarmStatusLabel setHidden:flag];
     [self.timerLabel setHidden:flag];
+    
+    self.helpButton.enabled = flag;
+    
+    if (flag) {
+        self.helpButton.alpha = 1.0; // If Button is enabled, its made visible
+    }
+    else {
+        self.helpButton.alpha = 0.1; // If Button is disabled, its made invisible
+    }
 }
 
-- (void)dealloc {
-    [_timerLabel release];
-    [_alarmLabel release];
-    [_alarmSwitch release];
-    [_statusLabel release];
-    [_userLabel release];
-    [super dealloc];
-}
+//- (void)dealloc {
+//    [_timerLabel release];
+//    [_alarmLabel release];
+//    [_alarmSwitch release];
+//    [_statusLabel release];
+//    [_userLabel release];
+//    [_alarmStatusLabel release];
+//    [super dealloc];
+//}
 @end
