@@ -38,7 +38,7 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//    locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+//  locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     NSLog(@"View Appeared");
 }
 
@@ -60,11 +60,10 @@
       //  [self.locationSwitch setOn:TRUE animated:TRUE];
         [locationManager stopUpdatingLocation];
         NSLog(@"OFF");
-
+        self.latitudeLabel.text = @"";
+        self.longitudeLabel.text = @"";
     }
 }
-
-
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -81,7 +80,6 @@
     NSLog(@"ACCURACY %f %f", currentLocation.horizontalAccuracy, currentLocation.verticalAccuracy);
     self.latitudeLabel.text = [NSString stringWithFormat:@"%lf",currentLocation.coordinate.latitude];
     self.longitudeLabel.text = [NSString stringWithFormat:@"%lf",currentLocation.coordinate.longitude];
-
     [self sendRemoteData];
     NSLog(@"I reached Here");
 }
@@ -151,8 +149,7 @@
              NSLog(@"Saved in User Table");
          };
          
-     }];
-    
+     }];    
 }
 
 @end

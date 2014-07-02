@@ -7,6 +7,8 @@
 
 #import "MainViewController.h"
 #import <Parse/Parse.h>
+#import "RemoteConnector.h"
+
 #define COUNTDOWN_START 9
 
 @interface MainViewController ()
@@ -23,6 +25,7 @@
     UserActivity *userData;
     int secondsLeft;
     PFUser *currentUser;
+    NSDictionary *content;
 }
 
 #pragma mark - View Methods
@@ -42,6 +45,8 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     currentUser = [PFUser currentUser];
+    NSLog(@"ksjflskfjslkdfjlskf");
+    NSLog(@"UID is %@",currentUser[@"uid"]);
     userData = [[UserActivity alloc] initWithStatus];
     [self hideLabelsAndSwitchesAndButtons:TRUE];
     
@@ -50,7 +55,7 @@
     NSLog(@"ViewDidAppear");
     NSLog(@"ViewDidAppear Done");
     userData.currentStatus = @"PASSIVE";
-
+    
     // Code for GPS.
     geocoder = [[CLGeocoder alloc] init];
     secondsLeft = COUNTDOWN_START;
@@ -85,7 +90,6 @@
     NSLog(@"Released");
     userData.currentStatus = @"DISABLED";
     [self sendRemoteData];
-    
     userData.currentAccuracy = DBL_MAX;
     secondsLeft = COUNTDOWN_START;
     self.timerLabel.text = [NSString stringWithFormat:@"%d", COUNTDOWN_START];
@@ -191,7 +195,6 @@
 
 -(void) sendRemoteData {
     
-    
     PFGeoPoint *currentPoint = [PFGeoPoint geoPointWithLatitude:currentLocation.coordinate.latitude
                                                       longitude:currentLocation.coordinate.longitude];
     
@@ -210,7 +213,6 @@
     
     //NSLog(dateString);
     [postObject setObject:currDate forKey:@"TimeStamp"];
-    //TODO: PHP Integration.
     
     [postObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
      {
@@ -225,8 +227,35 @@
              [alertView show];
              return;
          }
-         if (succeeded) // Successfully saved, post a notification to tell other view controllers
+         if (succeeded) // Saved in Parse, now trying in UIUC backend.
          {
+             
+             NSString *latitudeString =  [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.latitude];
+             NSString *longitudeString = [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.longitude];
+             
+             NSNumber *latitude = @([latitudeString doubleValue]);
+             NSNumber *longitude = @([longitudeString doubleValue]);
+             NSNumber *timestamp = [[NSNumber alloc] initWithDouble:10000];
+             
+             NSLog(@"Entering UIUC Backend");
+             NSError *error;
+             NSURL *url = [NSURL URLWithString:@"http://isafe.web.engr.illinois.edu/mobileapp/insertData.php"];
+             
+             content = [[NSDictionary alloc] initWithObjectsAndKeys:
+                                  currentUser[@"uid"], @"uid",
+                                  latitude, @"latitude",
+                                  longitude, @"longitude",
+                                  userData.currentStatus, @"status",
+                                  nil];
+             
+             NSData *postData = [NSJSONSerialization dataWithJSONObject:content options:NSJSONWritingPrettyPrinted error:&error];
+             
+             NSData *responseData = [[NSData alloc] initWithData:[RemoteConnector sendAndReceiveJSONRequest:postData :url]];
+//             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+             
+             NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+             NSLog(@"the final Data is:%@",responseString);
+             
              NSLog(@"Saved in Backend");
          };
          
@@ -255,7 +284,6 @@
          };
          
      }];
-    
 }
 
 #pragma mark - Timer Code
@@ -283,6 +311,8 @@
         [self hideLabelsAndSwitchesAndButtons:TRUE];
         [self sendRemoteData];
         
+        //[rC sendRemoteData:currentLocation :userData];
+        
         // TODO: Push Notification Initiation.
     }
 }
@@ -293,9 +323,7 @@
     [self.alarmLabel setHidden:flag];
     [self.alarmStatusLabel setHidden:flag];
     [self.timerLabel setHidden:flag];
-    
     self.helpButton.enabled = flag;
-    
     if (flag) {
         self.helpButton.alpha = 1.0; // If Button is enabled, its made visible
     }
@@ -311,6 +339,7 @@
 //    [_statusLabel release];
 //    [_userLabel release];
 //    [_alarmStatusLabel release];
-//    [super dealloc];
+//[super dealloc];
 //}
+
 @end

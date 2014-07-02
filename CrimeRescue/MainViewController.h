@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "UserActivity.h"
+
 @interface MainViewController : UIViewController
 
 - (IBAction)logoutButtonPressed:(id)sender;
