@@ -38,9 +38,19 @@
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-//  locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+    locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
     NSLog(@"View Appeared");
 }
+
+-(void) viewDidDisappear:(BOOL)animated {
+    NSLog(@"%d", secondsLeft);
+    if (timer) {
+        [timer invalidate];
+        timer = nil;
+    }
+    [locationManager stopUpdatingLocation];
+}
+
 
 - (IBAction)logoutButtonPressed:(id)sender {
     [PFUser logOut];

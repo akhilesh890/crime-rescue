@@ -27,6 +27,7 @@
 		7430EC58191DEFF800603F14 /* PatrolMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC57191DEFF800603F14 /* PatrolMainViewController.m */; };
 		7430EC89191DF26500603F14 /* FBShimmeringLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC73191DF26500603F14 /* FBShimmeringLayer.m */; };
 		7430EC8A191DF26500603F14 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC75191DF26500603F14 /* FBShimmeringView.m */; };
+		74352096196751DE0064E46C /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 74352095196751DE0064E46C /* icon120.png */; };
 		746095D41910DFA70023AE9D /* UserActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 746095D31910DFA70023AE9D /* UserActivity.m */; };
 		746095DC19120EE40023AE9D /* Aired_Leather_840x1136_DARK.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */; };
 		746095DD19120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */; };
@@ -91,6 +92,7 @@
 		7430EC73191DF26500603F14 /* FBShimmeringLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringLayer.m; sourceTree = "<group>"; };
 		7430EC74191DF26500603F14 /* FBShimmeringView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBShimmeringView.h; sourceTree = "<group>"; };
 		7430EC75191DF26500603F14 /* FBShimmeringView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBShimmeringView.m; sourceTree = "<group>"; };
+		74352095196751DE0064E46C /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		746095D21910DFA70023AE9D /* UserActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivity.h; sourceTree = "<group>"; };
 		746095D31910DFA70023AE9D /* UserActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActivity.m; sourceTree = "<group>"; };
 		746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aired_Leather_840x1136_DARK.jpg; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */,
 				746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */,
 				746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */,
+				74352095196751DE0064E46C /* icon120.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -196,6 +199,7 @@
 		741041DC190A236700425598 /* CrimeRescue */ = {
 			isa = PBXGroup;
 			children = (
+				748CDCF0194E68FC00F75849 /* RemoteConnector.h */,
 				748CDCF1194E68FC00F75849 /* RemoteConnector.m */,
 				74104207190A345600425598 /* MainViewController.h */,
 				74104205190A265200425598 /* Storyboard.storyboard */,
@@ -258,7 +262,6 @@
 		7430EC98191EE08400603F14 /* Normal Mode */ = {
 			isa = PBXGroup;
 			children = (
-				748CDCF0194E68FC00F75849 /* RemoteConnector.h */,
 				74104208190A345600425598 /* MainViewController.m */,
 				74ED1740190B2DB10090C3BE /* SignUpViewController.h */,
 				74ED1741190B2DB10090C3BE /* SignUpViewController.m */,
@@ -330,6 +333,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Aswin Akhilesh";
 				TargetAttributes = {
+					741041D2190A236700425598 = {
+						DevelopmentTeam = L45ZT26XMD;
+					};
 					741041ED190A236700425598 = {
 						TestTargetID = 741041D2190A236700425598;
 					};
@@ -366,6 +372,7 @@
 				741041E9190A236700425598 /* Images.xcassets in Resources */,
 				74104206190A265200425598 /* Storyboard.storyboard in Resources */,
 				746095DE19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg in Resources */,
+				74352096196751DE0064E46C /* icon120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +461,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -511,8 +518,9 @@
 		74104200190A236700425598 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -522,6 +530,7 @@
 				INFOPLIST_FILE = "CrimeRescue/CrimeRescue-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -529,8 +538,9 @@
 		74104201190A236700425598 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -540,6 +550,7 @@
 				INFOPLIST_FILE = "CrimeRescue/CrimeRescue-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

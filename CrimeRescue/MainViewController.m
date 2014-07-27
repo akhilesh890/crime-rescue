@@ -242,16 +242,16 @@
              NSURL *url = [NSURL URLWithString:@"http://isafe.web.engr.illinois.edu/mobileapp/insertData.php"];
              
              content = [[NSDictionary alloc] initWithObjectsAndKeys:
-                                  currentUser[@"uid"], @"uid",
-                                  latitude, @"latitude",
-                                  longitude, @"longitude",
-                                  userData.currentStatus, @"status",
-                                  nil];
+                        currentUser[@"uid"], @"uid",
+                        latitude, @"latitude",
+                        longitude, @"longitude",
+                        userData.currentStatus, @"status",
+                        nil];
              
              NSData *postData = [NSJSONSerialization dataWithJSONObject:content options:NSJSONWritingPrettyPrinted error:&error];
              
              NSData *responseData = [[NSData alloc] initWithData:[RemoteConnector sendAndReceiveJSONRequest:postData :url]];
-//             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+             //             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
              
              NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
              NSLog(@"the final Data is:%@",responseString);
