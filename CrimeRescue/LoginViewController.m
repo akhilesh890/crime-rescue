@@ -1,4 +1,4 @@
-//
+    //
 //  LoginViewController.m
 //  CrimeRescue
 //
@@ -8,10 +8,6 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
-
-@interface LoginViewController ()
-
-@end
 
 @implementation LoginViewController
 
@@ -53,8 +49,6 @@
                 [alertView show];
             }
         }
-        
-        
         if (isNormalUser == YES)
         {
             [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {

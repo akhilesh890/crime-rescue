@@ -186,7 +186,6 @@
 			children = (
 				748CDCF0194E68FC00F75849 /* RemoteConnector.h */,
 				748CDCF1194E68FC00F75849 /* RemoteConnector.m */,
-				74104207190A345600425598 /* MainViewController.h */,
 				74104205190A265200425598 /* Storyboard.storyboard */,
 				7430EC98191EE08400603F14 /* Normal Mode */,
 				7430EC99191EE09000603F14 /* Patrol Mode */,
@@ -229,6 +228,7 @@
 		7430EC98191EE08400603F14 /* Normal Mode */ = {
 			isa = PBXGroup;
 			children = (
+				74104207190A345600425598 /* MainViewController.h */,
 				741D4C0A1985C937001BD619 /* LoginViewController.m */,
 				741D4C0B1985C937001BD619 /* SignUpViewController.m */,
 				741D4C0C1985C937001BD619 /* SignUpViewController.h */,
@@ -415,7 +415,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aswin Akhilesh (5M77F457N3)";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Aswin Akhilesh (5M77F457N3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -453,7 +454,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Aswin Akhilesh (5M77F457N3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Aswin Akhilesh (5M77F457N3)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

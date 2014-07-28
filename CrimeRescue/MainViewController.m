@@ -32,9 +32,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
     NSLog(@"ViewDidLoad");
-    // NSLog(currentUser[@"firstname"]);
+    [super viewDidLoad];
     [self hideLabelsAndSwitchesAndButtons:TRUE];
     currentUser = [PFUser currentUser];
     if (currentUser == false) {
@@ -49,14 +48,20 @@
     NSLog(@"UID is %@",currentUser[@"uid"]);
     userData = [[UserActivity alloc] initWithStatus];
     [self hideLabelsAndSwitchesAndButtons:TRUE];
-    
     self.statusLabel.text = @"Press Above";
     self.userLabel.text = [NSString stringWithFormat:@"Welcome, %@",[currentUser username]];
     NSLog(@"ViewDidAppear");
     NSLog(@"ViewDidAppear Done");
     userData.currentStatus = @"PASSIVE";
     
+    //Setup Push Notification Settings
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    currentInstallation[@"mode"] = @"Normal";
+    [currentInstallation saveInBackground];
+    
     // Code for GPS.
+    
     geocoder = [[CLGeocoder alloc] init];
     secondsLeft = COUNTDOWN_START;
     locationManager = [[CLLocationManager alloc] init];
@@ -94,7 +99,6 @@
     secondsLeft = COUNTDOWN_START;
     self.timerLabel.text = [NSString stringWithFormat:@"%d", COUNTDOWN_START];
     [self hideLabelsAndSwitchesAndButtons:FALSE];
-    
     timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateCounter:) userInfo:nil repeats:NO];   // Start the Timer
 }
 
@@ -172,24 +176,6 @@
     
     NSLog(@"I reached Here");
     
-    //    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
-    //        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
-    //        if (error == nil && [placemarks count] > 0) {
-    //            placemark = [placemarks lastObject];
-    //            self.address.text = [NSString stringWithFormat:@"%@ %@\n%@ %@\n%@\n%@",
-    //                                 placemark.subThoroughfare, placemark.thoroughfare,
-    //                                 placemark.postalCode, placemark.locality,
-    //                                 placemark.administrativeArea,
-    //                                 placemark.country];
-    //        } else {
-    //            NSLog(@"%@", error.debugDescription);
-    //        }
-    //    } ];
-    //    }
-    //    else {
-    //        NSLog(@"Not So Accurate!");
-    //    }
-    
 }
 
 
@@ -249,13 +235,9 @@
                         nil];
              
              NSData *postData = [NSJSONSerialization dataWithJSONObject:content options:NSJSONWritingPrettyPrinted error:&error];
-             
              NSData *responseData = [[NSData alloc] initWithData:[RemoteConnector sendAndReceiveJSONRequest:postData :url]];
-             //             NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
-             
              NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
              NSLog(@"the final Data is:%@",responseString);
-             
              NSLog(@"Saved in Backend");
          };
          
@@ -313,7 +295,37 @@
         
         //[rC sendRemoteData:currentLocation :userData];
         
+//        CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+//        [geocoder reverseGeocodeLocation:currentLocation
+//                       completionHandler:^(NSArray *placemarks, NSError *error) {
+//                           NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+//                           
+//                           if (error){
+//                               NSLog(@"Geocode failed with error: %@", error);
+//                               return;
+//                               
+//                           }
+//                           CLPlacemark *placemark = [placemarks objectAtIndex:0];
+//                           
+//                           NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+//                           NSLog(@"placemark.country %@",placemark.country);
+//                           NSLog(@"placemark.postalCode %@",placemark.postalCode);
+//                           NSLog(@"placemark.administrativeArea %@",placemark.administrativeArea);
+//                           NSLog(@"placemark.locality %@",placemark.locality);
+//                           NSLog(@"placemark.subLocality %@",placemark.subLocality);
+//                           NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
+//                           
+//                       }];
+        
+        NSString *alertString = [NSString stringWithFormat: @"Help %@! Lat: %@ Long: %@", [currentUser username], [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.latitude], [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.longitude]];
+        
         // TODO: Push Notification Initiation.
+        PFQuery *pushQuery = [PFInstallation query];
+        [pushQuery whereKey:@"mode" equalTo:@"Patrol"];
+        
+        // Send push notification to query
+        [PFPush sendPushMessageToQueryInBackground:pushQuery
+                                       withMessage:alertString];
     }
 }
 
@@ -331,15 +343,4 @@
         self.helpButton.alpha = 0.1; // If Button is disabled, its made invisible
     }
 }
-
-//- (void)dealloc {
-//    [_timerLabel release];
-//    [_alarmLabel release];
-//    [_alarmSwitch release];
-//    [_statusLabel release];
-//    [_userLabel release];
-//    [_alarmStatusLabel release];
-//[super dealloc];
-//}
-
 @end

@@ -25,6 +25,7 @@
 }
 
 - (IBAction)signupButtonPressed:(id)sender {
+    
     NSString *username = [self.usernameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *firstname = [self.nameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSString *password = [self.passwordTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -43,7 +44,7 @@
     
     else {
         
-        //Parse Backend
+        //Update Parse Backend
         
         bool success = YES;
         PFUser *newUser = [PFUser user];

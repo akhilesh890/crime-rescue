@@ -28,17 +28,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"Patrol ViewDidLoad");
     [self performSegueWithIdentifier:@"showPatrolLogin" sender:self];
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+   PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    currentInstallation[@"mode"]=@"Patrol";
+    [currentInstallation saveInBackground];
+    NSLog(@"Patrol ViewDidLoad Done");
     currentUser = [PFUser currentUser];
     self.userLabel.text = [NSString stringWithFormat:@"Welcome, %@",[currentUser username]];
     locationManager = [[CLLocationManager alloc] init];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+
     NSLog(@"View Appeared");
 }
 
