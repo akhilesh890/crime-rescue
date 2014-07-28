@@ -103,7 +103,7 @@
                     NSLog(@"Saved");
                 }
                 
-                NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                //NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 //                NSLog(@"the final output is:%@",responseString);
                 NSLog(@"Reached here!");
                 [self.navigationController popToRootViewControllerAnimated:YES];

@@ -21,6 +21,8 @@
 		741041FC190A236700425598 /* CrimeRescueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 741041FB190A236700425598 /* CrimeRescueTests.m */; };
 		74104206190A265200425598 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74104205190A265200425598 /* Storyboard.storyboard */; };
 		74104209190A345600425598 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74104208190A345600425598 /* MainViewController.m */; };
+		741D4C0E1985C937001BD619 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741D4C0A1985C937001BD619 /* LoginViewController.m */; };
+		741D4C0F1985C937001BD619 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 741D4C0B1985C937001BD619 /* SignUpViewController.m */; };
 		7430EC4F191DA05900603F14 /* MainPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC4E191DA05900603F14 /* MainPage.m */; };
 		7430EC52191DEFB000603F14 /* PatrolSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC51191DEFB000603F14 /* PatrolSignUpViewController.m */; };
 		7430EC55191DEFDC00603F14 /* PatrolLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC54191DEFDC00603F14 /* PatrolLoginViewController.m */; };
@@ -29,13 +31,8 @@
 		7430EC8A191DF26500603F14 /* FBShimmeringView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7430EC75191DF26500603F14 /* FBShimmeringView.m */; };
 		74352096196751DE0064E46C /* icon120.png in Resources */ = {isa = PBXBuildFile; fileRef = 74352095196751DE0064E46C /* icon120.png */; };
 		746095D41910DFA70023AE9D /* UserActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 746095D31910DFA70023AE9D /* UserActivity.m */; };
-		746095DC19120EE40023AE9D /* Aired_Leather_840x1136_DARK.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */; };
 		746095DD19120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */; };
-		746095DE19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */; };
-		746095DF19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */; };
 		748CDCF2194E68FC00F75849 /* RemoteConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 748CDCF1194E68FC00F75849 /* RemoteConnector.m */; };
-		74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED173E190B2D9D0090C3BE /* LoginViewController.m */; };
-		74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 74ED1741190B2DB10090C3BE /* SignUpViewController.m */; };
 		74ED1744190B40610090C3BE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1743190B40610090C3BE /* Parse.framework */; };
 		74ED1746190B40A80090C3BE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1745190B40A80090C3BE /* AudioToolbox.framework */; };
 		74ED1748190B410B0090C3BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74ED1747190B410B0090C3BE /* CFNetwork.framework */; };
@@ -78,6 +75,10 @@
 		74104205190A265200425598 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		74104207190A345600425598 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		74104208190A345600425598 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		741D4C0A1985C937001BD619 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		741D4C0B1985C937001BD619 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		741D4C0C1985C937001BD619 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		741D4C0D1985C937001BD619 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7430EC4D191DA05900603F14 /* MainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPage.h; sourceTree = "<group>"; };
 		7430EC4E191DA05900603F14 /* MainPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPage.m; sourceTree = "<group>"; };
 		7430EC50191DEFB000603F14 /* PatrolSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PatrolSignUpViewController.h; sourceTree = "<group>"; };
@@ -95,16 +96,9 @@
 		74352095196751DE0064E46C /* icon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon120.png; sourceTree = "<group>"; };
 		746095D21910DFA70023AE9D /* UserActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserActivity.h; sourceTree = "<group>"; };
 		746095D31910DFA70023AE9D /* UserActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserActivity.m; sourceTree = "<group>"; };
-		746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Aired_Leather_840x1136_DARK.jpg; sourceTree = "<group>"; };
 		746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background_ios_by_anto97ism-d61yby0.jpg"; sourceTree = "<group>"; };
-		746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg; sourceTree = "<group>"; };
-		746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg"; sourceTree = "<group>"; };
 		748CDCF0194E68FC00F75849 /* RemoteConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteConnector.h; sourceTree = "<group>"; };
 		748CDCF1194E68FC00F75849 /* RemoteConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteConnector.m; sourceTree = "<group>"; };
-		74ED173D190B2D9D0090C3BE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		74ED173E190B2D9D0090C3BE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		74ED1740190B2DB10090C3BE /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpViewController.h; path = ../SignUpViewController.h; sourceTree = "<group>"; };
-		74ED1741190B2DB10090C3BE /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpViewController.m; path = ../SignUpViewController.m; sourceTree = "<group>"; };
 		74ED1743190B40610090C3BE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		74ED1745190B40A80090C3BE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		74ED1747190B410B0090C3BE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -158,10 +152,7 @@
 				741041F5190A236700425598 /* CrimeRescueTests */,
 				741041D5190A236700425598 /* Frameworks */,
 				741041D4190A236700425598 /* Products */,
-				746095D819120EE30023AE9D /* Aired_Leather_840x1136_DARK.jpg */,
 				746095D919120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg */,
-				746095DA19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg */,
-				746095DB19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg */,
 				74352095196751DE0064E46C /* icon120.png */,
 			);
 			sourceTree = "<group>";
@@ -262,11 +253,11 @@
 		7430EC98191EE08400603F14 /* Normal Mode */ = {
 			isa = PBXGroup;
 			children = (
+				741D4C0A1985C937001BD619 /* LoginViewController.m */,
+				741D4C0B1985C937001BD619 /* SignUpViewController.m */,
+				741D4C0C1985C937001BD619 /* SignUpViewController.h */,
+				741D4C0D1985C937001BD619 /* LoginViewController.h */,
 				74104208190A345600425598 /* MainViewController.m */,
-				74ED1740190B2DB10090C3BE /* SignUpViewController.h */,
-				74ED1741190B2DB10090C3BE /* SignUpViewController.m */,
-				74ED173D190B2D9D0090C3BE /* LoginViewController.h */,
-				74ED173E190B2D9D0090C3BE /* LoginViewController.m */,
 				746095D21910DFA70023AE9D /* UserActivity.h */,
 				746095D31910DFA70023AE9D /* UserActivity.m */,
 			);
@@ -365,13 +356,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				746095DF19120EE40023AE9D /* Dark-Wood-Texture-iphone-5-wallpaper-ilikewallpaper_com.jpg in Resources */,
 				741041E1190A236700425598 /* InfoPlist.strings in Resources */,
 				746095DD19120EE40023AE9D /* background_ios_by_anto97ism-d61yby0.jpg in Resources */,
-				746095DC19120EE40023AE9D /* Aired_Leather_840x1136_DARK.jpg in Resources */,
 				741041E9190A236700425598 /* Images.xcassets in Resources */,
 				74104206190A265200425598 /* Storyboard.storyboard in Resources */,
-				746095DE19120EE40023AE9D /* c0d39c52eb31191eee7e6a21e419ef08_w325_h576_sc.jpg in Resources */,
 				74352096196751DE0064E46C /* icon120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,8 +380,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7430EC4F191DA05900603F14 /* MainPage.m in Sources */,
-				74ED173F190B2D9D0090C3BE /* LoginViewController.m in Sources */,
-				74ED1742190B2DB10090C3BE /* SignUpViewController.m in Sources */,
 				7430EC89191DF26500603F14 /* FBShimmeringLayer.m in Sources */,
 				748CDCF2194E68FC00F75849 /* RemoteConnector.m in Sources */,
 				741041E7190A236700425598 /* AppDelegate.m in Sources */,
@@ -401,8 +387,10 @@
 				7430EC58191DEFF800603F14 /* PatrolMainViewController.m in Sources */,
 				7430EC55191DEFDC00603F14 /* PatrolLoginViewController.m in Sources */,
 				74104209190A345600425598 /* MainViewController.m in Sources */,
+				741D4C0E1985C937001BD619 /* LoginViewController.m in Sources */,
 				7430EC52191DEFB000603F14 /* PatrolSignUpViewController.m in Sources */,
 				7430EC8A191DF26500603F14 /* FBShimmeringView.m in Sources */,
+				741D4C0F1985C937001BD619 /* SignUpViewController.m in Sources */,
 				741041E3190A236700425598 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

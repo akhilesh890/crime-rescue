@@ -209,7 +209,7 @@
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"dd.MM.YY HH:mm:ss"];
-    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    //NSString *dateString = [dateFormatter stringFromDate:currDate];
     
     //NSLog(dateString);
     [postObject setObject:currDate forKey:@"TimeStamp"];
@@ -235,7 +235,7 @@
              
              NSNumber *latitude = @([latitudeString doubleValue]);
              NSNumber *longitude = @([longitudeString doubleValue]);
-             NSNumber *timestamp = [[NSNumber alloc] initWithDouble:10000];
+             //NSNumber *timestamp = [[NSNumber alloc] initWithDouble:10000];
              
              NSLog(@"Entering UIUC Backend");
              NSError *error;
