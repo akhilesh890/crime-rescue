@@ -7,4 +7,4 @@ CrimeRescue can be used in 2 modes: Normal and Patrol. The normal mode is used b
 
 If a user in normal mode pressed the button by mistake, there is a 10 second timer that goes off before which the user password needs to be entered to disable the alarm. This makes sure that the offender does not forcibly disable the alarm on his own. 
 
-Once the 10 second timer completes, alarm is raised and push notifications are sent to nearest patrol units. The location updates are also stored in Parse backend for later tracking purposes.
+Once the 10 second timer completes, alarm is raised and push notifications with the victim's user location are sent to nearest patrol units. The location updates are also stored in Parse backend for later tracking purposes.
