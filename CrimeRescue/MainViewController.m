@@ -26,7 +26,6 @@
     int secondsLeft;
     PFUser *currentUser;
     NSDictionary *content;
-    PFObject *lastObject;
 }
 
 #pragma mark - View Methods
@@ -151,11 +150,6 @@
     [self performSegueWithIdentifier:@"showLogin" sender:self];
 }
 
-- (IBAction)deleteButtonPressed:(id)sender {
-    [lastObject deleteInBackground ];
-}
-
-
 #pragma mark - GPS Code
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
@@ -197,7 +191,6 @@
     [postObject setObject:currUser forKey:@"User"];
     [postObject setObject:currentPoint forKey:@"GeoLocation"];
     [postObject setObject:userData.currentStatus forKey:@"Status"];
-    [postObject setObject:@"NORMAL" forKey:@"Mode"];
     
     NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
@@ -249,7 +242,7 @@
          };
          
      }];
-    lastObject = postObject;
+    
     // Update User table.
     
     [currUser setObject:currentPoint forKey:@"recentLocation"];
@@ -299,7 +292,31 @@
         self.timerLabel.text = [NSString stringWithFormat:@"%d", COUNTDOWN_START];
         [self hideLabelsAndSwitchesAndButtons:TRUE];
         [self sendRemoteData];
-                
+        
+        //[rC sendRemoteData:currentLocation :userData];
+        
+//        CLGeocoder *geocoder = [[CLGeocoder alloc] init] ;
+//        [geocoder reverseGeocodeLocation:currentLocation
+//                       completionHandler:^(NSArray *placemarks, NSError *error) {
+//                           NSLog(@"reverseGeocodeLocation:completionHandler: Completion Handler called!");
+//                           
+//                           if (error){
+//                               NSLog(@"Geocode failed with error: %@", error);
+//                               return;
+//                               
+//                           }
+//                           CLPlacemark *placemark = [placemarks objectAtIndex:0];
+//                           
+//                           NSLog(@"placemark.ISOcountryCode %@",placemark.ISOcountryCode);
+//                           NSLog(@"placemark.country %@",placemark.country);
+//                           NSLog(@"placemark.postalCode %@",placemark.postalCode);
+//                           NSLog(@"placemark.administrativeArea %@",placemark.administrativeArea);
+//                           NSLog(@"placemark.locality %@",placemark.locality);
+//                           NSLog(@"placemark.subLocality %@",placemark.subLocality);
+//                           NSLog(@"placemark.subThoroughfare %@",placemark.subThoroughfare);
+//                           
+//                       }];
+        
         NSString *alertString = [NSString stringWithFormat: @"Help %@! Lat: %@ Long: %@", [currentUser username], [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.latitude], [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.longitude]];
         
         // TODO: Push Notification Initiation.

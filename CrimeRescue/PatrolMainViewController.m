@@ -43,30 +43,7 @@
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
-    
-    
-    PFQuery *query = [PFUser query];
-    [query whereKey:@"Status" equalTo:@"ALARM"] ;
-   //[query selectKeys:@[@"email"]];
-   //    PFObject *first = [query getFirstObject];
-  //    NSString *f = first[@"email"];
-//    NSLog(f);
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *entries, NSError *error) {
-        NSString *result = @"EMAIL: \n";
-        // Comments now contains the last ten comments, and the "post" field
-        // has been populated. For example:
-        for (PFObject *entry in entries) {
-            // This does not require a network access.
-            PFObject *post = entry[@"email"];
-            NSString *p = post;
-            result = [result stringByAppendingString:p];
-            result = [result stringByAppendingString:@"\n"];
-            NSLog(@"retrieved related post: %@", p);
-        }
-        self.printLabel.text = result;
-    }];
-    
+
     NSLog(@"View Appeared");
 }
 
@@ -78,6 +55,7 @@
     }
     [locationManager stopUpdatingLocation];
 }
+
 
 - (IBAction)logoutButtonPressed:(id)sender {
     [PFUser logOut];
@@ -120,8 +98,6 @@
     [self sendRemoteData];
     NSLog(@"I reached Here");
 }
-
-
 
 -(void) sendRemoteData {
     
