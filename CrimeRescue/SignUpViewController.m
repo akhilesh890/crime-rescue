@@ -72,7 +72,7 @@
 
                 NSLog(@"Entering UIUC Backend");
                 NSError *error;
-                NSURL *url = [NSURL URLWithString:@"http://isafe.web.engr.illinois.edu/mobileapp/insertUser.php"];
+                NSURL *url = [NSURL URLWithString:@"http://dharmaseth.web.engr.illinois.edu/CrimeRescue/insertUser.php"];
                 NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:
                                      username, @"uname",
                                      password, @"password",
@@ -86,26 +86,33 @@
                 NSData *postData = [NSJSONSerialization dataWithJSONObject:tmp options:NSJSONWritingPrettyPrinted error:&error];
                 
                 NSData *responseData = [[NSData alloc] initWithData:[RemoteConnector sendAndReceiveJSONRequest:postData :url]];
-                NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:&error];
+                NSLog(@"Before Error: %@ %@", error, [error userInfo]);
+                NSDictionary *responseDictionary=[NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingAllowFragments|NSJSONReadingMutableContainers error:&error];
+                //NSArray *responseDictionary = [NSKeyedUnarchiver unarchiveObjectWithData:responseData];
+                //NSDictionary *responseDictionary = (NSDictionary*) [NSKeyedUnarchiver unarchiveObjectWithData:responseData];
                 
-                if (responseDictionary[@"uid"]) {
+                NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+                
+                NSLog(@"the final output is: %@",responseString);
+                NSLog(@"After Error: %@ %@", error, [error userInfo]);
+                NSLog(@"Array: %@", responseDictionary);
+                
+                if (responseDictionary[@"uid"] != nil) {
                     NSString *uidString = [responseDictionary objectForKey:@"uid"];
                     NSLog(@"%@", uidString);
                     
                     NSNumberFormatter * f = [[NSNumberFormatter alloc] init];
                     [f setNumberStyle:NSNumberFormatterDecimalStyle];
-                    NSNumber * uid = [f numberFromString:uidString];
-                    
+                    NSNumber * uidNum = [f numberFromString:uidString];
+                    NSLog(@"%@", uidNum);
                     PFQuery *query = [PFUser query];
                     PFUser *currentUser = [query getObjectWithId:currObjId];
                     NSLog(currentUser[@"username"]);
-                    [currentUser setObject:uid forKey:@"uid"];
-                    [currentUser saveInBackground];
+                    [currentUser setObject:uidNum forKey:@"uid"];
+                    [currentUser save];
                     NSLog(@"Saved");
                 }
                 
-                //NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-//                NSLog(@"the final output is:%@",responseString);
                 NSLog(@"Reached here!");
                 [self.navigationController popToRootViewControllerAnimated:YES];
             }

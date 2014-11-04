@@ -50,8 +50,8 @@
     [self hideLabelsAndSwitchesAndButtons:TRUE];
     self.statusLabel.text = @"Press Above";
     self.userLabel.text = [NSString stringWithFormat:@"Welcome, %@",[currentUser username]];
-    NSLog(@"ViewDidAppear");
-    NSLog(@"ViewDidAppear Done");
+    NSLog(@"ViewWillAppear");
+    NSLog(@"ViewWillAppear Done");
     userData.currentStatus = @"PASSIVE";
     
     //Setup Push Notification Settings
@@ -111,7 +111,7 @@
         NSString *passwordEntered = [alert textFieldAtIndex:0].text;
         if ([passwordEntered isEqualToString:currentUser[@"passcode"]]) {
             self.statusLabel.text = @"Alarm Disabled";
-            NSLog(@"Equalled");
+            NSLog(@"Alarm Disabled");
             secondsLeft = 0;
             if (timer){
                 [timer invalidate];
@@ -215,17 +215,15 @@
          }
          if (succeeded) // Saved in Parse, now trying in UIUC backend.
          {
-             
              NSString *latitudeString =  [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.latitude];
              NSString *longitudeString = [[NSString alloc] initWithFormat:@"%g", currentLocation.coordinate.longitude];
-             
              NSNumber *latitude = @([latitudeString doubleValue]);
              NSNumber *longitude = @([longitudeString doubleValue]);
              //NSNumber *timestamp = [[NSNumber alloc] initWithDouble:10000];
              
              NSLog(@"Entering UIUC Backend");
              NSError *error;
-             NSURL *url = [NSURL URLWithString:@"http://isafe.web.engr.illinois.edu/mobileapp/insertData.php"];
+             NSURL *url = [NSURL URLWithString:@"http://dharmaseth.web.engr.illinois.edu/CrimeRescue/insertData.php"];
              
              content = [[NSDictionary alloc] initWithObjectsAndKeys:
                         currentUser[@"uid"], @"uid",

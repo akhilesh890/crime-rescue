@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>53DDE24F-E79D-4D53-B8D0-CB99077F1B6B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CrimeRescue</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C30AA1B4-4013-422E-ABB9-B2C3A3F93BCD</key>
+		<string>https://github.com/akhilesh890/crime-rescue.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CrimeRescue.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C30AA1B4-4013-422E-ABB9-B2C3A3F93BCD</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/akhilesh890/crime-rescue.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C30AA1B4-4013-422E-ABB9-B2C3A3F93BCD</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C30AA1B4-4013-422E-ABB9-B2C3A3F93BCD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CrimeRescue</string>
+		</dict>
+	</array>
+</dict>
+</plist>
